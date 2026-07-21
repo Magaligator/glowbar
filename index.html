@@ -29,7 +29,7 @@
     --ease: cubic-bezier(.16,.8,.3,1);
   }
   *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;overflow-anchor:none;}
   body{
     margin:0;background:var(--cream);color:var(--ink);
     font-family:var(--font-body);font-weight:300;
@@ -300,6 +300,17 @@
     .nav-links{display:none;}
     .nav-toggle{display:inline-flex;}
     .hero-media .corner{position:static;margin-top:18px;max-width:none;}
+
+    /* homogeneous mobile spacing rhythm */
+    .hero{padding:48px 0 56px;}
+    .section{padding:64px 0;}
+    .statement{padding:56px 0;}
+    .quote-section{padding:64px 0;}
+    .cta-band{padding:64px 0;}
+    footer{padding:56px 0 24px;}
+    .footer-top{gap:40px;padding-bottom:36px;}
+    .contact-form-wrap{padding:28px;}
+    .stats-row{margin-top:40px;}
   }
 </style>
 </head>

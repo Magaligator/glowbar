@@ -1,5 +1,13 @@
 // Glowbar — shared interactions
 
+// Prevents mobile browsers from restoring/drifting scroll position on load
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+if (!location.hash) {
+  window.scrollTo(0, 0);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile nav toggle
