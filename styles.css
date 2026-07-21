@@ -254,6 +254,13 @@ footer{ padding: 80px 0 30px; border-top: 1px solid var(--mauve); }
 .footer-social{ display: flex; gap: 22px; }
 .footer-social a:hover{ color: var(--pink-deep); }
 
+/* ---------- text drift on scroll ---------- */
+
+[data-parallax]{ will-change: transform; }
+@media (prefers-reduced-motion: reduce){
+  [data-parallax]{ transform: none !important; }
+}
+
 /* ---------- forms ---------- */
 
 .sr-only{ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

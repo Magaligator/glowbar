@@ -43,6 +43,30 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('in'));
   }
 
+  // Text drift on scroll
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (parallaxEls.length && !reduceMotion) {
+    let ticking = false;
+    const updateParallax = () => {
+      const vh = window.innerHeight;
+      parallaxEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.top + rect.height / 2;
+        const offset = Math.max(-40, Math.min(40, (elCenter - vh / 2) * 0.12));
+        el.style.transform = `translateY(${offset.toFixed(1)}px)`;
+      });
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateParallax();
+  }
+
   // Contact & newsletter forms (no backend wired up yet — shows a confirmation only)
   document.querySelectorAll('form[data-form]').forEach(form => {
     form.addEventListener('submit', (e) => {
