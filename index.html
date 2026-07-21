@@ -67,6 +67,23 @@
   }
   .nav-links a:hover::after, .nav-links a.active::after{transform:scaleX(1);}
   .nav-links a.active{color:var(--oxblood);}
+  .nav-right{display:flex;align-items:center;gap:18px;}
+  .nav-toggle{
+    display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;
+  }
+  .nav-toggle span{width:22px;height:1.5px;background:var(--oxblood);display:block;transition:transform .3s var(--ease),opacity .3s var(--ease);}
+  .nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .mobile-panel{
+    display:none;flex-direction:column;border-top:1px solid var(--mauve);background:var(--cream);
+  }
+  .mobile-panel.open{display:flex;}
+  .mobile-panel a{
+    padding:16px clamp(20px,5vw,64px);border-bottom:1px solid var(--mauve);
+    font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--ink);
+  }
+  .mobile-panel a.active{color:var(--oxblood);}
   .btn{
     display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
     padding:13px 30px;border-radius:2px;transition:all .3s var(--ease);
@@ -215,6 +232,7 @@
     .hero-grid, .split, .footer-top{grid-template-columns:1fr;gap:50px;}
     .pillars{grid-template-columns:1fr;gap:60px;}
     .nav-links{display:none;}
+    .nav-toggle{display:inline-flex;}
     .hero-media .corner{position:static;margin-top:18px;max-width:none;}
   }
 </style>
@@ -233,8 +251,21 @@
       <a href="#studio">Studio</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="#book" class="btn btn-primary btn-sm">Book a class</a>
+    <div class="nav-right">
+      <a href="#book" class="btn btn-primary btn-sm">Book a class</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+  <div class="mobile-panel">
+    <a href="#" class="active">Home</a>
+    <a href="#method">The Method</a>
+    <a href="shop.html">Shop</a>
+    <a href="#studio">Studio</a>
+    <a href="#contact">Contact</a>
+    <a href="#book">Book a class</a>
+  </div>
 </header>
 
 <main>
@@ -448,5 +479,6 @@
   </div>
 </footer>
 
+<script src="script.js" defer></script>
 </body>
 </html>
