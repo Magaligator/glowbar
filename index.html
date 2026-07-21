@@ -224,8 +224,21 @@
   .footer-social{display:flex;gap:22px;}
   .footer-social a:hover{color:var(--pink-deep);}
   .banner{
-    background:var(--oxblood);color:var(--blush);text-align:center;padding:9px;
+    background:var(--oxblood);color:var(--blush);padding:9px 0;
     font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    overflow:hidden;white-space:nowrap;
+  }
+  .banner .marquee{
+    display:inline-flex;width:max-content;
+    animation:marquee-scroll 24s linear infinite;
+  }
+  .banner .marquee span{padding:0 36px;}
+  @keyframes marquee-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .banner .marquee{animation:none;}
   }
 
   /* TEXT DRIFT ON SCROLL */
@@ -245,7 +258,14 @@
 </head>
 <body>
 
-<div class="banner">Alternate concept — chic &amp; refined direction, Glowbar palette</div>
+<div class="banner">
+  <div class="marquee" aria-hidden="false">
+    <span>Alternate concept — chic &amp; refined direction, Glowbar palette</span>
+    <span>Alternate concept — chic &amp; refined direction, Glowbar palette</span>
+    <span>Alternate concept — chic &amp; refined direction, Glowbar palette</span>
+    <span>Alternate concept — chic &amp; refined direction, Glowbar palette</span>
+  </div>
+</div>
 
 <header>
   <nav class="nav">
