@@ -228,11 +228,10 @@
     font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
   }
 
-  /* REVEAL ON SCROLL */
-  .reveal{opacity:0;transition:opacity 1.1s ease-out;}
-  .reveal.in{opacity:1;}
+  /* TEXT DRIFT ON SCROLL */
+  [data-parallax]{will-change:transform;}
   @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;transition:none;}
+    [data-parallax]{transform:none !important;}
   }
 
   @media (max-width:900px){
@@ -279,16 +278,16 @@
 
   <section class="hero">
     <div class="container hero-grid">
-      <div class="hero-copy reveal in">
+      <div class="hero-copy">
         <span class="eyebrow">Geneva, Switzerland</span>
-        <h1 class="display">An atelier<br>for <em>your face.</em></h1>
+        <h1 class="display" data-parallax>An atelier<br>for <em>your face.</em></h1>
         <p class="lede">A gentle, precise ritual of facial movement — paired with a nourishing bar — designed for women who treat self-care as an art, not an errand.</p>
         <div class="cta-row">
           <a href="#book" class="btn btn-primary">Reserve your first séance</a>
           <a href="#method" class="btn btn-outline">Discover the ritual</a>
         </div>
       </div>
-      <div class="hero-media reveal in">
+      <div class="hero-media">
         <div class="frame">
           <img src="assets/campaign-dumbbells.jpg" alt="Glowbar client holding pink sculpting weights" loading="eager" fetchpriority="high" decoding="async">
         </div>
@@ -297,32 +296,32 @@
     </div>
   </section>
 
-  <div class="statement reveal">
+  <div class="statement">
     <div class="container">
-      <p>Beauty, we believe, is not applied — <em>it is trained, nourished and tended to,</em> one gentle movement at a time.</p>
+      <p data-parallax>Beauty, we believe, is not applied — <em>it is trained, nourished and tended to,</em> one gentle movement at a time.</p>
     </div>
   </div>
 
   <section class="section" id="method">
     <div class="container">
-      <div class="section-head center reveal">
+      <div class="section-head center">
         <span class="eyebrow center">The Glowbar Ritual</span>
-        <h2>Three gestures, one philosophy.</h2>
+        <h2 data-parallax>Three gestures, one philosophy.</h2>
       </div>
       <div class="pillars">
-        <article class="pillar reveal">
+        <article class="pillar">
           <div class="pillar-media"><img src="assets/treatment-ball.jpg" alt="Facial sculpting tool applied to the cheek" loading="lazy" decoding="async"></div>
           <span class="roman">I.</span>
           <h3>Face pilates</h3>
           <p>Delicate, expert-guided movement to lift and tone — a workout as graceful as it is effective.</p>
         </article>
-        <article class="pillar reveal">
+        <article class="pillar">
           <div class="pillar-media"><img src="assets/smoothie-pour.jpg" alt="A Glowbar smoothie being poured" loading="lazy" decoding="async"></div>
           <span class="roman">II.</span>
           <h3>The wellness bar</h3>
           <p>Glow-optimised blends, poured to nourish your radiance from within, after every séance.</p>
         </article>
-        <article class="pillar reveal">
+        <article class="pillar">
           <div class="pillar-media"><img src="assets/studio-interior.jpg" alt="Glowbar studio interior" loading="lazy" decoding="async"></div>
           <span class="roman">III.</span>
           <h3>A moment, just for you</h3>
@@ -335,10 +334,10 @@
   <section class="section" id="studio" style="padding-top:0;">
     <div class="container">
       <div class="split">
-        <div class="split-media reveal"><img src="assets/studio-interior.jpg" alt="Glowbar studio with treatment chairs" loading="lazy" decoding="async"></div>
-        <div class="split-copy reveal">
+        <div class="split-media"><img src="assets/studio-interior.jpg" alt="Glowbar studio with treatment chairs" loading="lazy" decoding="async"></div>
+        <div class="split-copy">
           <span class="eyebrow">Step inside</span>
-          <h2>A studio dressed<br>like a boudoir.</h2>
+          <h2 data-parallax>A studio dressed<br>like a boudoir.</h2>
           <p class="lede">Soft light, warm blush tones and heated treatment chairs — every detail composed for a moment of quiet indulgence.</p>
           <ul>
             <li>Private treatment chairs, heated &amp; upholstered</li>
@@ -353,12 +352,12 @@
 
   <section class="section" style="padding-top:0;">
     <div class="container">
-      <div class="section-head center reveal">
+      <div class="section-head center">
         <span class="eyebrow center">Shop the edit</span>
-        <h2>Bring the atelier home with you.</h2>
+        <h2 data-parallax>Bring the atelier home with you.</h2>
       </div>
       <div class="eshop-preview">
-        <article class="eshop-card reveal">
+        <article class="eshop-card">
           <div class="eshop-card-media">
             <span class="eshop-card-tag">Best-seller</span>
             <img src="assets/product-collagen-cream.jpg" alt="Glowbar Collagen Cream" loading="lazy" decoding="async" width="800" height="946">
@@ -370,7 +369,7 @@
             <a href="shop.html" class="add-link" aria-label="Découvrir Glowbar Collagen Cream">+</a>
           </div>
         </article>
-        <article class="eshop-card reveal">
+        <article class="eshop-card">
           <div class="eshop-card-media">
             <img src="assets/product-tools-set.jpg" alt="Roller quartz rose, gua sha miroir et bandeau Glowbar" loading="lazy" decoding="async" width="800" height="800">
           </div>
@@ -381,7 +380,7 @@
             <a href="shop.html" class="add-link" aria-label="Découvrir Mirror Gua Sha">+</a>
           </div>
         </article>
-        <article class="eshop-card reveal">
+        <article class="eshop-card">
           <div class="eshop-card-media">
             <img src="assets/product-smoothie-lineup.jpg" alt="Gamme de smoothies glow Glowbar" loading="lazy" decoding="async" width="800" height="447">
           </div>
@@ -393,7 +392,7 @@
           </div>
         </article>
       </div>
-      <div class="cta-row reveal" style="justify-content:center;margin-top:44px;">
+      <div class="cta-row" style="justify-content:center;margin-top:44px;">
         <a href="shop.html" class="btn btn-outline">Voir toute la boutique</a>
       </div>
     </div>
@@ -402,16 +401,16 @@
   <section class="section" style="padding-top:0;">
     <div class="container">
       <div class="split">
-        <div class="split-media reveal">
+        <div class="split-media">
           <div class="video-feature">
             <video controls preload="none" poster="assets/video-poster-2.jpg" playsinline aria-label="Glowbar — découvrez le rituel en mouvement">
               <source src="assets/video/glow-ritual-com.mp4" type="video/mp4">
             </video>
           </div>
         </div>
-        <div class="split-copy reveal">
+        <div class="split-copy">
           <span class="eyebrow">Un rituel, en mouvement</span>
-          <h2>Voyez la<br><em>séance</em> prendre vie.</h2>
+          <h2 data-parallax>Voyez la<br><em>séance</em> prendre vie.</h2>
           <p class="lede">Un instant suffit à comprendre pourquoi nos clientes reviennent — le geste, la texture, la lenteur assumée. Regardez, puis venez le vivre.</p>
           <div class="cta-row"><a href="#book" class="btn btn-outline">Réserver ma séance</a></div>
         </div>
@@ -421,9 +420,9 @@
 
   <section class="quote-section">
     <div class="container">
-      <div class="quote-block reveal">
+      <div class="quote-block">
         <span class="script">Sabrina Dusi</span>
-        <blockquote>"I founded Glowbar to create the wellness destination I always wished existed — one where caring for yourself feels effortless, enjoyable, and genuinely effective."</blockquote>
+        <blockquote data-parallax>"I founded Glowbar to create the wellness destination I always wished existed — one where caring for yourself feels effortless, enjoyable, and genuinely effective."</blockquote>
         <cite>Founder, Glowbar — Geneva</cite>
       </div>
     </div>
@@ -431,9 +430,9 @@
 
   <section class="section" id="book">
     <div class="container">
-      <div class="cta-band reveal">
+      <div class="cta-band">
         <span class="eyebrow">Your first séance is on us</span>
-        <h2>Come, be tended to.</h2>
+        <h2 data-parallax>Come, be tended to.</h2>
         <p>Reserve your first Glowbar séance and feel the lift after just 45 quiet minutes.</p>
         <div class="cta-row">
           <a href="#" class="btn btn-light">Book your first class</a>
