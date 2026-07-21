@@ -59,6 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
     updateParallax();
   }
 
+  // Contact & newsletter forms (no backend wired up yet — shows a confirmation only)
+  document.querySelectorAll('form[data-form]').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const note = form.nextElementSibling;
+      form.reset();
+      form.hidden = true;
+      if (note && note.classList.contains('form-note')) {
+        note.hidden = false;
+      }
+    });
+  });
+
   // Shop filter pills
   const pills = document.querySelectorAll('.filter-pill');
   const cards = document.querySelectorAll('.product-card');
