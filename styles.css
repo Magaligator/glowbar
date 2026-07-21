@@ -254,6 +254,18 @@ footer{ padding: 80px 0 30px; border-top: 1px solid var(--mauve); }
 .footer-social{ display: flex; gap: 22px; }
 .footer-social a:hover{ color: var(--pink-deep); }
 
+/* ---------- forms ---------- */
+
+.sr-only{ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.form-note{ color: var(--oxblood); font-size: 14px; margin-top: 16px; }
+.footer-brand .form-note{ font-size: 13px; max-width: 240px; }
+.newsletter-form{ display: flex; gap: 8px; margin: 20px 0 6px; max-width: 320px; }
+.newsletter-form input{
+  flex: 1; min-width: 0; font-family: var(--font-body); font-size: 14px; color: var(--ink);
+  background: var(--cream); border: 1px solid var(--mauve); border-radius: 2px; padding: 10px 12px;
+}
+.newsletter-form input:focus{ outline: none; border-color: var(--oxblood); }
+
 /* ---------- video feature ---------- */
 
 .video-feature{ position: relative; padding: 14px; background: var(--white); box-shadow: 0 30px 60px -25px rgba(74,33,28,.22); }

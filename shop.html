@@ -54,8 +54,12 @@
     <div class="container">
       <div class="reveal in" style="max-width:640px;">
         <span class="eyebrow">Shop Glowbar</span>
-        <h1 class="display">Bring the studio <em>home.</em></h1>
+        <h1 class="display" data-parallax>Bring the studio <em>home.</em></h1>
         <p class="lede" style="max-width:52ch;">Sculpting tools, studio apparel and wellness bar blends — designed to extend the ritual well past your session.</p>
+        <div class="cta-row">
+          <a href="#shop" class="btn btn-primary">Shop the edit</a>
+          <a href="index.html#book" class="btn btn-outline">Visit the studio</a>
+        </div>
       </div>
     </div>
   </section>
@@ -71,6 +75,11 @@
   <!-- PRODUCT GRID -->
   <section id="shop">
     <div class="container">
+
+      <div class="section-head center reveal">
+        <span class="eyebrow center">The Full Collection</span>
+        <h2 data-parallax>Every tool, texture<br>and blend.</h2>
+      </div>
 
       <div class="filters reveal">
         <button class="filter-pill active" data-filter="all">All</button>
@@ -204,7 +213,7 @@
         </div>
         <div class="split-copy reveal" style="transition-delay:.1s">
           <span class="eyebrow">From the wellness bar</span>
-          <h2>Glow, blended fresh daily.</h2>
+          <h2 data-parallax>Glow, blended fresh daily.</h2>
           <p class="lede">Every blend is formulated to nourish the skin internally and extend your post-session radiance — functional, nutritious, and made to order at the bar.</p>
           <div class="cta-row"><a href="index.html#book" class="btn btn-primary">Visit the studio</a></div>
         </div>
@@ -217,7 +226,7 @@
     <div class="container">
       <div class="cta-band reveal">
         <span class="eyebrow" style="color:var(--pink)">New in</span>
-        <h2>The full skincare line<br>launches soon.</h2>
+        <h2 data-parallax>The full skincare line<br>launches soon.</h2>
         <p>Join the list to be the first to shop Glowbar's rose glow mask, peony oil and more.</p>
         <div class="cta-row">
           <a href="#" class="btn btn-light">Join the waitlist</a>
@@ -234,6 +243,12 @@
       <div class="footer-brand">
         <span class="script">Glowbar</span>
         <p>An atelier for face pilates. Geneva, Switzerland.</p>
+        <form class="newsletter-form" data-form>
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Your email" autocomplete="email" required>
+          <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+        </form>
+        <p class="form-note" hidden>You're on the list — welcome to the glow.</p>
       </div>
       <div class="footer-col">
         <h4>Studio</h4>
@@ -263,7 +278,7 @@
     <div class="footer-bottom">
       <span>© 2026 Glowbar. All rights reserved.</span>
       <div class="footer-social">
-        <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Newsletter</a>
+        <a href="#">Instagram</a><a href="#">TikTok</a>
       </div>
     </div>
   </div>
