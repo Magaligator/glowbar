@@ -29,7 +29,7 @@
     --ease: cubic-bezier(.16,.8,.3,1);
   }
   *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;overflow-anchor:none;}
   body{
     margin:0;background:var(--cream);color:var(--ink);
     font-family:var(--font-body);font-weight:300;
@@ -286,12 +286,6 @@
     .banner .marquee{animation:none;}
   }
 
-  /* TEXT DRIFT ON SCROLL */
-  [data-parallax]{will-change:transform;}
-  @media (prefers-reduced-motion:reduce){
-    [data-parallax]{transform:none !important;}
-  }
-
   @media (max-width:900px){
     .hero-grid, .split, .split.split-wide, .footer-top{grid-template-columns:1fr;gap:50px;}
     .split.split-wide .split-media{height:auto;}
@@ -300,6 +294,17 @@
     .nav-links{display:none;}
     .nav-toggle{display:inline-flex;}
     .hero-media .corner{position:static;margin-top:18px;max-width:none;}
+
+    /* homogeneous mobile spacing rhythm */
+    .hero{padding:48px 0 56px;}
+    .section{padding:64px 0;}
+    .statement{padding:56px 0;}
+    .quote-section{padding:64px 0;}
+    .cta-band{padding:64px 0;}
+    footer{padding:56px 0 24px;}
+    .footer-top{gap:40px;padding-bottom:36px;}
+    .contact-form-wrap{padding:28px;}
+    .stats-row{margin-top:40px;}
   }
 </style>
 </head>
@@ -347,7 +352,7 @@
     <div class="container hero-grid">
       <div class="hero-copy">
         <span class="eyebrow">Geneva, Switzerland</span>
-        <h1 class="display" data-parallax>An atelier<br>for <em>your face.</em></h1>
+        <h1 class="display">An atelier<br>for <em>your face.</em></h1>
         <p class="lede">A gentle, precise ritual of facial movement — paired with a nourishing bar — designed for women who treat self-care as an art, not an errand.</p>
         <div class="cta-row">
           <a href="#book" class="btn btn-primary">Reserve your first session</a>
@@ -366,7 +371,7 @@
   <section class="hero hero-stats">
     <div class="container">
       <span class="eyebrow">Why the face deserves a workout</span>
-      <h2 class="display" data-parallax>Beauty has evolved<br>everywhere except the face.</h2>
+      <h2 class="display">Beauty has evolved<br>everywhere except the face.</h2>
       <div class="stats-row">
         <div class="stat-block">
           <span class="stat-number">90%</span>
@@ -388,25 +393,25 @@
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow center">The Glowbar Ritual</span>
-        <h2 data-parallax>Three gestures, one philosophy.</h2>
+        <h2>Three gestures, one philosophy.</h2>
       </div>
       <div class="pillars">
         <article class="pillar">
           <div class="pillar-media"><img src="assets/treatment-ball.jpg" alt="Facial sculpting tool applied to the cheek" loading="lazy" decoding="async"></div>
           <span class="roman">I.</span>
-          <h3 data-parallax>Face pilates</h3>
+          <h3>Face pilates</h3>
           <p>Delicate, expert-guided movement to lift and tone — a workout as graceful as it is effective.</p>
         </article>
         <article class="pillar">
           <div class="pillar-media"><img src="assets/smoothie-pour.jpg" alt="A Glowbar smoothie being poured" loading="lazy" decoding="async"></div>
           <span class="roman">II.</span>
-          <h3 data-parallax>The wellness bar</h3>
+          <h3>The wellness bar</h3>
           <p>Glow-optimised blends, poured to nourish your radiance from within, after every session.</p>
         </article>
         <article class="pillar">
           <div class="pillar-media"><img src="assets/studio-interior.jpg" alt="Glowbar studio interior" loading="lazy" decoding="async"></div>
           <span class="roman">III.</span>
-          <h3 data-parallax>A moment, just for you</h3>
+          <h3>A moment, just for you</h3>
           <p>An intimate studio designed as a quiet retreat — a pause between the world and home.</p>
         </article>
       </div>
@@ -419,7 +424,7 @@
         <div class="split-media"><img src="assets/wellness-counter.jpg" alt="Glowbar wellness bar counter with neon signage, smoothies and fresh ingredients" loading="lazy" decoding="async"></div>
         <div class="split-copy">
           <span class="eyebrow">Step inside</span>
-          <h2 data-parallax>A studio dressed<br>like a boudoir.</h2>
+          <h2>A studio dressed<br>like a boudoir.</h2>
           <p class="lede">Soft light, warm blush tones and heated treatment chairs — every detail composed for a moment of quiet indulgence.</p>
           <ul>
             <li>Private treatment chairs, heated &amp; upholstered</li>
@@ -436,7 +441,7 @@
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow center">Shop the edit</span>
-        <h2 data-parallax>Bring the atelier home with you.</h2>
+        <h2>Bring the atelier home with you.</h2>
       </div>
       <div class="eshop-preview">
         <article class="eshop-card">
@@ -445,7 +450,7 @@
             <img src="assets/product-collagen-cream.jpg" alt="Glowbar Collagen Cream" loading="lazy" decoding="async" width="800" height="946">
           </div>
           <span class="cat">Skincare</span>
-          <h3 data-parallax>Glowbar Collagen Cream</h3>
+          <h3>Glowbar Collagen Cream</h3>
           <div class="product-row">
             <span class="price">CHF 54.—</span>
             <a href="shop.html" class="add-link" aria-label="Discover Glowbar Collagen Cream">+</a>
@@ -456,7 +461,7 @@
             <img src="assets/product-tools-set.jpg" alt="Roller quartz rose, gua sha miroir et bandeau Glowbar" loading="lazy" decoding="async" width="800" height="800">
           </div>
           <span class="cat">Tools</span>
-          <h3 data-parallax>Mirror Gua Sha</h3>
+          <h3>Mirror Gua Sha</h3>
           <div class="product-row">
             <span class="price">CHF 64.—</span>
             <a href="shop.html" class="add-link" aria-label="Discover Mirror Gua Sha">+</a>
@@ -467,7 +472,7 @@
             <img src="assets/product-smoothie-lineup.jpg" alt="Gamme de smoothies glow Glowbar" loading="lazy" decoding="async" width="800" height="447">
           </div>
           <span class="cat">Smoothies</span>
-          <h3 data-parallax>Smoothie Glow Berry</h3>
+          <h3>Smoothie Glow Berry</h3>
           <div class="product-row">
             <span class="price">CHF 12.—</span>
             <a href="shop.html" class="add-link" aria-label="Discover Smoothie Glow Berry">+</a>
@@ -492,7 +497,7 @@
         </div>
         <div class="split-copy">
           <span class="eyebrow">A ritual, in motion</span>
-          <h2 data-parallax>See the<br><em>session</em> come to life.</h2>
+          <h2>See the<br><em>session</em> come to life.</h2>
           <p class="lede">One moment is enough to understand why our clients return — the gesture, the texture, the deliberate slowness. Watch, then come live it.</p>
           <div class="cta-row"><a href="#book" class="btn btn-outline">Reserve my session</a></div>
         </div>
@@ -503,8 +508,8 @@
   <section class="quote-section">
     <div class="container">
       <div class="quote-block">
-        <span class="script" data-parallax>Sabrina Dusi</span>
-        <blockquote data-parallax>"I founded Glowbar to create the wellness destination I always wished existed — one where caring for yourself feels effortless, enjoyable, and genuinely effective."</blockquote>
+        <span class="script">Sabrina Dusi</span>
+        <blockquote>"I founded Glowbar to create the wellness destination I always wished existed — one where caring for yourself feels effortless, enjoyable, and genuinely effective."</blockquote>
         <cite>Founder, Glowbar — Geneva</cite>
       </div>
     </div>
@@ -514,7 +519,7 @@
     <div class="container">
       <div class="cta-band">
         <span class="eyebrow">Your first session is on us</span>
-        <h2 data-parallax>Come, be tended to.</h2>
+        <h2>Come, be tended to.</h2>
         <p>Reserve your first Glowbar session and feel the lift after just 45 quiet minutes.</p>
         <div class="cta-row">
           <a href="#" class="btn btn-light">Book your first class</a>

@@ -1,5 +1,13 @@
 // Glowbar — shared interactions
 
+// Prevents mobile browsers from restoring/drifting scroll position on load
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+if (!location.hash) {
+  window.scrollTo(0, 0);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile nav toggle
@@ -33,30 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('in'));
-  }
-
-  // Text drift on scroll
-  const parallaxEls = document.querySelectorAll('[data-parallax]');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (parallaxEls.length && !reduceMotion) {
-    let ticking = false;
-    const updateParallax = () => {
-      const vh = window.innerHeight;
-      parallaxEls.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const elCenter = rect.top + rect.height / 2;
-        const offset = Math.max(-16, Math.min(16, (elCenter - vh / 2) * 0.06));
-        el.style.transform = `translateY(${offset.toFixed(1)}px)`;
-      });
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    }, { passive: true });
-    updateParallax();
   }
 
   // Contact & newsletter forms (no backend wired up yet — shows a confirmation only)
