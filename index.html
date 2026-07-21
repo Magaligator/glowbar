@@ -156,7 +156,9 @@
 
   /* SPLIT */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;}
-  .split.split-wide{grid-template-columns:1.3fr .95fr;}
+  .split.split-wide{grid-template-columns:1.3fr .95fr;align-items:stretch;}
+  .split.split-wide .split-media{height:100%;}
+  .split.split-wide .split-media img{height:100%;object-fit:cover;}
   .split-media{padding:14px;background:var(--white);box-shadow:0 30px 60px -25px rgba(74,33,28,.22);}
   .split-media img{aspect-ratio:5/6;object-fit:cover;}
   .split-copy h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin-bottom:20px;font-weight:340;}
@@ -268,6 +270,8 @@
 
   @media (max-width:900px){
     .hero-grid, .split, .split.split-wide, .footer-top{grid-template-columns:1fr;gap:50px;}
+    .split.split-wide .split-media{height:auto;}
+    .split.split-wide .split-media img{height:auto;aspect-ratio:16/9;}
     .pillars{grid-template-columns:1fr;gap:60px;}
     .nav-links{display:none;}
     .nav-toggle{display:inline-flex;}
@@ -388,7 +392,7 @@
   <section class="section" id="studio" style="padding-top:0;">
     <div class="container">
       <div class="split split-wide">
-        <div class="split-media"><img src="assets/wellness-counter.jpg" alt="Glowbar wellness bar counter with neon signage, smoothies and fresh ingredients" loading="lazy" decoding="async" style="aspect-ratio:16/9"></div>
+        <div class="split-media"><img src="assets/wellness-counter.jpg" alt="Glowbar wellness bar counter with neon signage, smoothies and fresh ingredients" loading="lazy" decoding="async"></div>
         <div class="split-copy">
           <span class="eyebrow">Step inside</span>
           <h2 data-parallax>A studio dressed<br>like a boudoir.</h2>
